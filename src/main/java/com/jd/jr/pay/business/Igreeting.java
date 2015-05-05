@@ -12,37 +12,18 @@
 *COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
 *ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
-package com.jd.jr.pay;
+package com.jd.jr.pay.business;
 
-import java.util.HashMap;
 import java.util.Map;
-
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.servlet.ModelAndView;
 
 /** 
  * @Description TODO
  *
- *测试Hello controller层
  * 
  * @author  jiangyoude@jd.com
  * @see 
  * @since   JDK1.6
  */
-@Controller
-public class HelloController {
-	@RequestMapping("/greeting.action")
-	public ModelAndView greeting(
-			@RequestParam(value="name",defaultValue="anonymous")
-			String name)
-	{
-		System.out.println("传入name参数为:"+name);
-		Map<String,Object> map=new HashMap<String,Object>();
-		map.put("userName", name);
-		//这里的hello表示跳转到/WEB-INF/views/下的hello.jsp页面
-		return new ModelAndView("hello",map);
-	}
+public interface Igreeting {
+	public Map<String,Object> sayHello(String name);
 }

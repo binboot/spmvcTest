@@ -18,24 +18,11 @@
 		http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task-4.1.xsd
 		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.1.xsd
 		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.1.xsd
-		http://www.springframework.org/schema/websocket http://www.springframework.org/schema/websocket/spring-websocket-4.1.xsd"
-	default-autowire="byName">
-	<!-- To enable @AspectJ support with XML based configuration use the aop:aspectj-autoproxyelement -->
-	<aop:aspectj-autoproxy />
+		http://www.springframework.org/schema/websocket http://www.springframework.org/schema/websocket/spring-websocket-4.1.xsd">
 
-	<!-- use the PropertyPlaceholderConfigurer to externalize property values 
-		from a bean definition in a separate file using the standard Java Properties 
-		format. -->
-	<context:property-placeholder
-		location="/WEB-INF/configlocation/properties/*.properties"
-		system-properties-mode="ENVIRONMENT" />
-
-	<!-- The use of <context:component-scan> implicitly enables the functionality 
-		of <context:annotation-config>. There is usually no need to include the <context:annotation-config> 
-		element when using <context:component-scan> -->
-	<context:component-scan base-package="com.jd.jr.pay" />
-	<!-- spring mvc配置文件 -->
-	<import resource="mvc/mvc-config.xml" />
-	<!-- spring context配置文件 -->
-	<import resource="context/context-config.xml" />
+	<!--LoggerHandler配置 <bean name="loggerHandler" class="com.jd.jr.pay.logger.LoggerHandler"></bean> 
+		<aop:config> <aop:aspect id="loggerAspect" ref="loggerHandler"> <aop:pointcut 
+		id="businessService" expression="execution(* com.jd.jr.pay.business.*.*(..))" 
+		/> <aop:around pointcut-ref="businessService" method="calculagraph" /> </aop:aspect> 
+		</aop:config> -->
 </beans>
