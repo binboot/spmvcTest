@@ -1,0 +1,1182 @@
+/* CSS Document */
+body {
+	padding: 0;
+	margin: 0;
+	background: url(images/body_bg.gif) 0 0 repeat-x #fff;
+	font-family: Arial, Helvetica, sans-serif;
+	color: #5C5C5C;
+}
+
+div, h1, h2, h3, h4, p, form, label, input, textarea, img, span {
+	margin: 0;
+	padding: 0;
+}
+
+ul {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	font-size: 0;
+}
+
+.spacer {
+	clear: both;
+	font-size: 0;
+	line-height: 0;
+}
+/*------------------------------------------------body--------------------*/
+
+/*------------------------------------------------main--------------------*/
+#main {
+	width: 972px;
+	margin: 0 auto;
+	padding: 0 0 32px 0;
+}
+/*------------------------------------------------left--------------------*/
+#left {
+	width: 247px;
+	float: left;
+}
+
+#left img {
+	display: block;
+	font-size: 0;
+	line-height: 0;
+}
+
+#left img.logo {
+	display: block;
+	width: 247px;
+	height: 97px;
+}
+
+#left ul {
+	padding: 25px 12px 46px 19px;
+	width: 216px;
+}
+
+#left ul li {
+	border-bottom: #D2D5D5 solid 1px;
+	padding: 0 0 8px 0;
+	margin: 0 0 8px 0;
+}
+
+#left ul li a.potencial {
+	display: block;
+	background: url(images/potencial.gif) 0 0 no-repeat;
+	width: 199px;
+	height: 42px;
+}
+
+#left ul li a.potencial:hover {
+	background: url(images/potencial_hover.gif) 0 0 no-repeat;
+}
+
+#left ul li a.ideal {
+	display: block;
+	background: url(images/ideal.gif) 0 0 no-repeat;
+	width: 199px;
+	height: 42px;
+}
+
+#left ul li a.ideal:hover {
+	background: url(images/idea_hover.gif) 0 0 no-repeat;
+}
+
+#left ul li.noBdr {
+	border-bottom: none;
+	padding: 0;
+	margin: 0;
+}
+
+#left ul li.noBdr a.innovative {
+	display: block;
+	background: url(images/innovative.gif) 0 0 no-repeat;
+	width: 204px;
+	height: 42px;
+}
+
+#left ul li.noBdr a.innovative:hover {
+	background: url(images/innovative_hover.gif) 0 0 no-repeat;
+}
+
+#left form {
+	width: 214px;
+	margin: 0 0 0 19px;
+	background: url(images/newsletter_bg.gif) 0 0 repeat-x;
+	height: 76px;
+	padding: 19px 9px 0 9px;
+}
+
+#left form h2 {
+	display: block;
+	width: 179px;
+	height: 16px;
+	background: url(images/newsletter_icon.gif) 0 0 no-repeat;
+	padding: 0 0 0 26px;
+	margin: 0 0 0 0;
+	font-size: 13px;
+	line-height: 16px;
+	font-weight: bold;
+	color: #101010;
+	background-color: inherit;
+}
+
+#left form input {
+	width: 205px;
+	float: right;
+	height: 21px;
+	border-bottom: #D4D0C8 solid 1px;
+	border-right: #D4D0C8 solid 1px;
+	border-top: #404040 solid 1px;
+	border-left: #404040 solid 1px;
+	color: #101010;
+	background-color: #fff;
+	font-size: 10px;
+	line-height: 21px;
+	margin: 7px 0 0 0;
+}
+
+#left form input.signup {
+	background: url(images/btn_signup.gif) 0 0 no-repeat;
+	width: 67px;
+	height: 17px;
+	border: none;
+	cursor: pointer;
+	float: right;
+	margin: 0;
+	padding: 0;
+}
+
+#left h2.faq {
+	display: block;
+	width: 180px;
+	height: 42px;
+	background: url(images/faq_icon.gif) 0 0 no-repeat;
+	padding: 0 0 0 41px;
+	margin: 15px 0 9px 21px;
+}
+
+#left h2.contact {
+	display: block;
+	width: 180px;
+	height: 42px;
+	background: url(images/contact_icon.gif) 0 0 no-repeat;
+	padding: 0 0 0 41px;
+	margin: 15px 0 9px 21px;
+}
+
+#left h2.contact span {
+	width: 179px;
+	border-bottom: #D2D5D5 solid 1px;
+	font-size: 22px;
+	height: 24px;
+	color: #000;
+	background-color: inherit;
+	margin: 10px 0 0 0;
+}
+
+#left h2.contact span b {
+	font-weight: bold;
+	font-size: 22px;
+	height: 24px;
+	color: #C18B1E;
+	background-color: inherit;
+}
+
+#left h2.faq span {
+	width: 179px;
+	border-bottom: #D2D5D5 solid 1px;
+	font-size: 22px;
+	height: 24px;
+	color: #000;
+	background-color: inherit;
+	margin: 10px 0 0 0;
+}
+
+#left h2.faq span b {
+	font-weight: bold;
+	font-size: 22px;
+	height: 24px;
+	color: #C18B1E;
+	background-color: inherit;
+}
+
+#left p.lftTxt {
+	width: 221px;
+	display: block;
+	margin: 0 0 0 19px;
+	font-size: 12px;
+	line-height: 18px;
+	padding: 0 0 42px 0;
+	border-bottom: #D2D5D5 solid 1px;
+}
+
+#left p.lftTxt span.green {
+	display: block;
+	font-weight: bold;
+	font-size: 13px;
+	color: #327C8E;
+	background-color: inherit;
+	margin: 0 0 14px 0;
+}
+
+#left img.callUs {
+	width: 208px;
+	height: 45px;
+	margin: 19px 0 10px 19px;
+}
+
+#left ul.botLink {
+	width: 171px;
+	height: 29px;
+	background: url(images/left_panel_bot_bg.gif) 0 0 repeat-x;
+	padding: 9px 0 0 49px;
+	margin: 0 0 0 19px;
+}
+
+#left ul.botLink li {
+	padding: 0 6px 0 0;
+	margin: 0;
+	float: left;
+}
+
+#left ul.botLink li a.css {
+	display: block;
+	background: url(images/css_bg.gif) 0 0 no-repeat;
+	width: 77px;
+	height: 17px;
+}
+
+#left ul.botLink li a.css:hover {
+	background: url(images/css_bg_hover.gif) 0 0 no-repeat;
+}
+
+#left ul.botLink li a.xhtml {
+	display: block;
+	background: url(images/xhtml_valid.gif) 0 0 no-repeat;
+	width: 77px;
+	height: 17px;
+}
+
+#left ul.botLink li a.xhtml:hover {
+	background: url(images/xhtml_valid_hover.gif) 0 0 no-repeat;
+}
+/*------------------------------------------------left--------------------*/
+
+/*------------------------------------------------right--------------------*/
+#right {
+	width: 705px;
+	float: right;
+	padding: 13px 0 0 0;
+}
+
+#right ul.nav {
+	width: 638px;
+	height: 36px;
+	float: left;
+}
+
+#right ul.nav li {
+	padding: 0 2px 0 0;
+	float: left;
+	background: url(images/nav_div.gif) right top;
+}
+
+#right ul.nav li a.navLink {
+	display: block;
+	background: url(images/nav_bg.gif) 0 0 repeat-x;
+	font: bold 11px/36px Arial, Helvetica, sans-serif;
+	color: #fff;
+	text-decoration: none;
+	background-color: inherit;
+	padding: 0 13px;
+}
+
+#right ul.nav li a.navLink:hover {
+	background: url(images/nav_bg_hover.gif) 0 0 repeat-x;
+}
+
+#right ul.nav li a.hover {
+	display: block;
+	background: url(images/nav_bg_hover.gif) 0 0 repeat-x;
+	font: bold 11px/36px Arial, Helvetica, sans-serif;
+	color: #fff;
+	text-decoration: none;
+	background-color: inherit;
+	padding: 0 13px;
+}
+
+#right ul.nav li.noImg {
+	padding: 0;
+	float: left;
+	background-image: none;
+}
+
+#right a.subscribe {
+	display: block;
+	background: url(images/subscribe.gif) 0 0 no-repeat;
+	width: 67px;
+	height: 17px;
+	float: right;
+	margin: 10px 0 0 0;
+}
+
+#right a.subscribe:hover {
+	background: url(images/subscribe_hover.gif) 0 0 no-repeat;
+}
+
+#right ul.link {
+	width: 705px;
+	margin: 5px 0 0 0;
+	padding: 0;
+	float: left;
+}
+
+#right ul.link li.subLink {
+	float: left;
+	width: 59px;
+	display: block;
+	padding: 0 5px 0 0;
+}
+
+#right ul.link li.subLink a.login {
+	display: block;
+	background: url(images/login.gif) 0 0 no-repeat;
+	width: 59px;
+	height: 17px;
+}
+
+#right ul.link li.subLink a.login:hover {
+	background: url(images/login_hover.gif) 0 0 no-repeat;
+}
+
+#right ul.link li.subLink a.serch {
+	display: block;
+	background: url(images/serch.gif) 0 0 no-repeat;
+	width: 59px;
+	height: 17px;
+}
+
+#right ul.link li.subLink a.serch:hover {
+	background: url(images/serch_hover.gif) 0 0 no-repeat;
+}
+
+#rightBotMain {
+	width: 625px;
+	float: left;
+	margin-top: 21px;
+	margin-right: 22px;
+	margin-bottom: 0;
+	margin-left: 0;
+}
+
+#rightBot {
+	width: 461px;
+	background: url(images/right_bottom_1px.gif) 0 0 repeat-y;
+}
+
+#rightBot p.top {
+	display: block;
+	background: url(images/right_bottom_top.gif) 0 0 no-repeat;
+	width: 461px;
+	height: 6px;
+	font-size: 0;
+	line-height: 0;
+}
+
+#rightBot p.bot {
+	display: block;
+	background: url(images/right_bottom_bot.gif) 0 0 no-repeat;
+	width: 461px;
+	height: 6px;
+	font-size: 0;
+	line-height: 0;
+}
+
+#rightBot2 {
+	width: 396px;
+	margin: 0 auto;
+	background: url(images/right_bottom_yellow_1px.gif) 0 0 repeat-x #FFFDF9;
+	color: #000;
+	padding: 0 28px 0 25px;
+}
+
+#rightBot2 h1 {
+	display: block;
+	background: url(images/more_success.gif) 0 0 no-repeat;
+	width: 284px;
+	height: 75px;
+	margin: 21px 0;
+	text-indent: -2000px;
+	float: left;
+}
+
+#rightBot2 a.whatSp {
+	display: block;
+	background: url(images/what_special.gif) 0 0 no-repeat;
+	width: 59px;
+	height: 43px;
+	float: right;
+}
+
+#rightBot2 a.whatSp:hover {
+	background: url(images/what_special_hover.gif) 0 0 no-repeat;
+}
+
+#rightBot2 ul.rightLink1 {
+	width: 367px;
+	background: url(images/bottom_link_1px.gif) 0 0 repeat-x;
+	padding: 14px 12px 32px 12px;
+	float: left;
+}
+
+#rightBot2 ul.rightLink1 li {
+	padding: 0;
+	margin: 0;
+	line-height: 0;
+}
+
+#rightBot2 ul.rightLink1 li a {
+	background: url(images/bullet.gif) 0 5px no-repeat;
+	padding: 0 0 0 18px;
+	font: normal 12px/21px Arial, Helvetica, sans-serif;
+	color: #5E543A;
+	text-decoration: none;
+	background-color: inherit;
+	display: block;
+}
+
+#rightBot2 ul.rightLink1 li a:hover {
+	color: #5E543A;
+	background-color: #EFECE4;
+}
+
+#best {
+	width: 100%;
+	border: #F4F4F4 solid 4px;
+	padding: 0 24px 33px 26px;
+	margin: 10px 0 0 0;
+}
+
+#best h2 {
+	display: block;
+	width: 100%;
+	height: 55px;
+	background: url(images/why_best.gif) 0 0 repeat-x;
+	float: left;
+}
+
+#best h2 span {
+	width: 100%;
+	font: bold 26px/55px Arial, Helvetica, sans-serif;
+	color: #327C8E;
+	background-color: #fff;
+	display: block;
+}
+
+#best p.bestTxt {
+	width: 100%;
+	padding: 2px 0 23px 0;
+	font: normal 18px/24px Arial, Helvetica, sans-serif;
+	color: #B87B05;
+	background-color: #fff;
+	display: block;
+	float: left;
+}
+
+#best p.bestTxt2 {
+	width: 100%;
+	padding: 0 0 20px 0;
+	font: normal 15px/23px Arial, Helvetica, sans-serif;
+	color: #363636;
+	background-color: #fff;
+	display: block;
+	float: left;
+}
+
+#best p.bestTxt2 a {
+	color: #607203;
+	background-color: #fff;
+	text-decoration: underline;
+}
+
+#best p.bestTxt2 a:hover {
+	color: #607203;
+	background-color: #F3F0F0;
+}
+
+#best p.bestTxt2 span {
+	color: #363636;
+	background-color: #F9FEDB;
+}
+
+#best p.bestTxt3 {
+	width: 100%;
+	padding: 0;
+	font: normal 15px/23px Arial, Helvetica, sans-serif;
+	color: #363636;
+	background-color: #fff;
+	display: block;
+	float: left;
+}
+
+#best p.bestTxt3 span {
+	color: #363636;
+	background-color: #F9FEDB;
+}
+
+#best p.bestTxt3 a {
+	background: url(images/more.gif) 0 0 no-repeat;
+	width: 69px;
+	height: 18px;
+	/*	margin:0 0 0 96px;*/
+	display: block;
+	float: right;
+}
+
+#best p.bestTxt3 a:hover {
+	background: url(images/more_hover.gif) 0 0 no-repeat;
+}
+
+#best p.bestTxt4 a {
+	background: url(images/submit.gif) 0 0 no-repeat;
+	width: 69px;
+	height: 18px;
+	/*	margin:0 0 0 96px;*/
+	display: block;
+	float: none;
+}
+
+#best p.bestTxt4 a:hover {
+	background: url(images/submit_hover.gif) 0 0 no-repeat;
+}
+
+#best p.pic {
+	display: block;
+	background: url(images/right_pic.gif) 0 0 no-repeat;
+	width: 99px;
+	height: 120px;
+	float: right;
+	border: #000000 dotted 1px;
+}
+
+#last {
+	background: url(images/right_1px.gif) 0 0 repeat-y;
+	width: 100%;
+	float: left;
+	margin: 21px 0 0 0;
+}
+
+#last p.lastTop {
+	display: block;
+	background: url(images/last_top.gif) 0 0 no-repeat;
+	width: 100%;
+	height: 6px;
+	font-size: 0;
+	line-height: 0;
+}
+
+#last h2.res {
+	display: block;
+	width: 100%;
+	height: 25px;
+	background: url(images/responsible_bg.gif) 0 0 repeat-x;
+	margin: 0 0 3px 6px;
+	padding: 10px 0 0 8px;
+}
+
+#last h2.res span {
+	background: url(images/bullet_red.gif) 0 6px no-repeat;
+	padding: 0 0 0 15px;
+	font: normal 18px/23px Arial, Helvetica, sans-serif;
+	color: #101010;
+	background-color: inherit;
+}
+
+#last ul {
+	width: 100%;
+	padding: 0 0 30px 0;
+	margin: 0 0 0 6px;
+	font-size: 0;
+	line-height: 0;
+}
+
+#last ul li {
+	display: block;
+	background: url(images/responsible_link_bg.gif) 0 0 repeat-x;
+	height: 24px;
+	padding: 0 0 0 8px;
+	margin: 0 0 3px 0;
+	line-height: 0;
+	font-size: 0;
+}
+
+#last ul li a {
+	background: url(images/arrow.gif) 0 5px no-repeat;
+	padding: 0 0 0 15px;
+	font: bold 12px/24px Arial, Helvetica, sans-serif;
+	color: #788C11;
+	background-color: inherit;
+	text-decoration: none;
+}
+
+#last ul li a:hover {
+	color: #000;
+	background-color: inherit;
+}
+
+#last h2.future {
+	display: block;
+	width: 100%;
+	height: 25px;
+	background: url(images/responsible_bg.gif) 0 0 repeat-x;
+	margin: 0 0 15px 6px;
+	padding: 10px 0 0 8px;
+}
+
+#last h2.future span {
+	background: url(images/bullet_red.gif) 0 6px no-repeat;
+	padding: 0 0 0 15px;
+	font: normal 18px/23px Arial, Helvetica, sans-serif;
+	color: #101010;
+	background-color: inherit;
+}
+
+#last h3 {
+	font: bold 13px/18px Arial, Helvetica, sans-serif;
+	color: #B87B05;
+	background-color: inherit;
+	display: block;
+	margin: 0 0 10px 13px;
+}
+
+#last p.lastTxt {
+	font: normal 12px/18px Arial, Helvetica, sans-serif;
+	color: #5C5C5C;
+	background-color: inherit;
+	margin: 0 0 0 13px;
+	display: block;
+	width: 100%;
+}
+
+#last a.plan {
+	color: #607203;
+	background-color: inherit;
+	text-decoration: underline;
+	font: normal 12px/20px Arial, Helvetica, sans-serif;
+	margin: 0 0 13px 13px;
+	display: block;
+	width: 100%;
+}
+
+#last a.plan:hover {
+	color: #000;
+	background-color: inherit;
+	text-decoration: underline;
+}
+
+#last p.lastBot {
+	display: block;
+	width: 100%;
+	height: 22px;
+	background: url(images/last_bot.gif) 0 0 no-repeat;
+}
+/*------------------------------------------------right--------------------*/
+
+/*------------------------------------------------main--------------------*/
+
+/*------------------------------------------------footer--------------------*/
+#footerMain {
+	width: 100%;
+	height: 101px;
+	background: url(images/footer_bg.gif) 0 0 repeat-x;
+	padding: 26px 0 0 0;
+}
+
+#footer {
+	width: 457px;
+	height: 101px;
+	margin: 0 auto;
+	position: relative;
+}
+
+#footer ul {
+	width: 457px;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+
+#footer ul li {
+	float: left;
+	font: normal 11px/22px Arial, Helvetica, sans-serif;
+	color: #000;
+	background-color: inherit;
+}
+
+#footer ul li a {
+	padding: 0 7px;
+	font: normal 11px/22px Arial, Helvetica, sans-serif;
+	color: #000;
+	background-color: inherit;
+	text-decoration: none;
+}
+
+#footer ul li a:hover {
+	text-decoration: underline;
+}
+
+#footer p.copyright {
+	font: normal 10px/12px Arial, Helvetica, sans-serif;
+	position: absolute;
+	left: 106px;
+	top: 29px;
+	color: #5B6A14;
+	background-color: inherit;
+	width: 241px;
+}
+
+#footer p.design {
+	display: block;
+	width: 206px;
+	height: 21px;
+	padding: 0;
+	position: absolute;
+	left: 119px;
+	top: 51px;
+	font: bold 13px/21px Arial, Helvetica, sans-serif;
+	color: #327C8E;
+	background-color: #F7F7F7;
+	text-align: center;
+}
+
+#footer p.design a.link {
+	font: bold 13px/21px Arial, Helvetica, sans-serif;
+	color: #327C8E;
+	background-color: #F7F7F7;
+	text-decoration: none;
+}
+
+#footer p.design a.link:hover {
+	color: #000;
+	background-color: #F7F7F7;
+}
+/*------------------------------------------------footer--------------------*/
+/*------------------------------------------------Contact--------------------*/
+.contactformfield {
+	font-family: Verdana;
+	font-size: 11px;
+	color: #000000;
+	height: 20px;
+	width: 70%;
+	float: left;
+	margin: 3px;
+	padding: 3px;
+	top: 1px;
+	clip: rect(1px, auto, auto, auto);
+	clear: none;
+	right: 30px;
+}
+
+.contactsubmit {
+	font-family: Verdana;
+	font-size: 11px;
+	color: #ffffff;
+	background-attachment: scroll;
+	background-image: url(images/read_more_bg.gif);
+	background-repeat: no-repeat;
+	background-position: center center;
+	clip: rect(auto, auto, auto, auto);
+	float: left;
+	margin: 5px;
+	padding: 5px;
+	left: auto;
+	top: auto;
+	right: auto;
+	bottom: auto;
+	width: 50px;
+}
+
+.contactformmessage {
+	font-family: Verdana;
+	font-size: 11px;
+	color: #000000;
+	height: 170px;
+	width: 70%;
+	float: left;
+	margin: 3px;
+	padding-top: 3px;
+	padding-right: 3px;
+	padding-bottom: 3px;
+	padding-left: 1px;
+}
+
+.contactbox {
+	font-family: Verdana;
+	font-size: 11px;
+	color: #000000;
+	border: 1px solid #CCCCCC;
+	height: 18px;
+}
+
+.contactmessagebox {
+	font-family: Verdana;
+	font-size: 11px;
+	color: #000000;
+	border: 1px solid #CCCCCC;
+	height: 170px;
+}
+
+.contacttextarea {
+	font-family: Verdana;
+	font-size: 11px;
+	color: #000000;
+	margin: 3px;
+	padding: 3px;
+}
+
+.contacttext {
+	margin: 3px;
+	padding: 3px;
+	height: 18px;
+	width: 100px;
+	float: left;
+	font-family: Verdana;
+	font-size: 11px;
+	color: #000000;
+}
+
+.contactsubmitbutton {
+	font-family: Verdana;
+	font-size: 11px;
+	color: #FFFFFF;
+	background-attachment: fixed;
+	background-image: url(images/btn_login.gif);
+	background-repeat: no-repeat;
+	background-position: center center;
+	height: 18px;
+	width: 55px;
+}
+
+.contacttextleft {
+	font-family: Verdana;
+	font-size: 11px;
+	color: #000000;
+	float: left;
+	width: 540px;
+}
+
+.contacterrortext {
+	margin: 3px;
+	padding: 3px;
+	height: 18px;
+	width: 10px;
+	float: left;
+	font-family: Verdana;
+	font-size: 11px;
+	color: #000000;
+}
+
+.buttonbg {
+	background-attachment: scroll;
+	background-image: url(images/buttonbg.gif);
+	background-repeat: repeat-x;
+	background-position: center center;
+	border: 1px solid #FF9900;
+	height: 21px;
+	font-family: Verdana;
+	color: #FFFFFF;
+}
+
+/*------------------------------------------------Contact--------------------*/
+.linkpopup {
+	position: relative;
+	font-family: Verdana;
+	font-size: 11px;
+	color: #1D859B;
+	height: 18px;
+	width: 250px;
+}
+
+.linkpopup span {
+	background-color: #ccc;
+	border: 1px solid #000;
+	display: block;
+	left: 0;
+	padding: .25em;
+	position: absolute;
+	top: -1.75em;
+}
+
+.linkpopup:link span, .linkpopup:visited span {
+	visibility: hidden;
+}
+
+.linkpopup:hover span, .linkpopup:focus span, .linkpopup:active span {
+	color: #000;
+	text-decoration: none;
+	visibility: visible;
+	border-top-color: #000000;
+	border-right-color: #000000;
+	border-bottom-color: #000000;
+	border-left-color: #000000;
+}
+
+.linkpopupmessagebox {
+	position: relative;
+	font-family: Verdana;
+	font-size: 11px;
+	color: #1D859B;
+	height: 170px;
+	width: 310px;
+}
+
+.linkpopupmessagebox span {
+	background-color: #ccc;
+	border: 1px solid #000;
+	display: block;
+	left: 0;
+	padding: .25em;
+	position: absolute;
+	top: -1.75em;
+}
+
+.linkpopupmessagebox:link span, .linkpopupmessagebox:visited span {
+	visibility: hidden;
+}
+
+.linkpopupmessagebox:hover span, .linkpopupmessagebox:focus span,
+	.linkpopupmessagebox:active span {
+	color: #000;
+	text-decoration: none;
+	visibility: visible;
+}
+/*------------------------------------------------Email--------------------*/
+.linkpopupemail {
+	position: relative;
+	font-family: Verdana;
+	font-size: 11px;
+	color: #1D859B;
+	height: 18px;
+	width: 200px;
+}
+
+.linkpopupemail span {
+	background-color: #ccc;
+	border: 1px solid #000;
+	display: block;
+	left: 0;
+	padding: .25em;
+	position: absolute;
+	top: -1.75em;
+}
+
+.linkpopupemail:link span, .linkpopupemail:visited span {
+	visibility: hidden;
+}
+
+.linkpopupemail:hover span, .linkpopupemail:focus span, .linkpopupemail:active span
+	{
+	color: #000;
+	text-decoration: none;
+	visibility: visible;
+	border-top-color: #000000;
+	border-right-color: #000000;
+	border-bottom-color: #000000;
+	border-left-color: #000000;
+}
+/*------------------------------------------------Email--------------------*/
+.contactTxt {
+	display: block;
+	width: 760px;
+	font-size: 12px;
+	line-height: 20px;
+	font-weight: normal;
+	margin: 0 0 15px 0;
+	color: #646464;
+	background-color: #FFF9E5;
+	color: #5A5A5A;
+	border: #D6CEB3 solid 1px;
+}
+
+.errortext {
+	font-family: Verdana;
+	font-size: 10px;
+	color: #FF0000;
+}
+
+.contactMain {
+	width: 625px;
+	float: left;
+	margin-top: 21px;
+	margin-right: 22px;
+	margin-bottom: 0;
+	margin-left: 0;
+}
+
+.
+.bestcontactTxt2 {
+	width: 100%;
+	padding: 0 0 20px 0;
+	font: normal 15px/23px Arial, Helvetica, sans-serif;
+	color: #363636;
+	background-color: #fff;
+	display: block;
+	float: left;
+}
+
+.contactformsubmit {
+	font-family: Verdana;
+	font-size: 11px;
+	color: #000000;
+	height: 20px;
+	width: 50%;
+	float: left;
+	margin: 3px;
+	padding: 3px;
+	top: 1px;
+	clip: rect(1px, auto, auto, auto);
+	clear: none;
+	right: 30px;
+	position: absolute;
+	left: 119px;
+}
+/*------------------------------------------------Textboxon Email--------------------*/
+.borderEffect {
+	background-color: #FFFFCC;
+	color: #A05A3D;
+	margin: 0px;
+	padding: 0px;
+	border: 1px solid #FFCC00;
+}
+
+.borderEffect:hover {
+	background-color: #FFCC89;
+	color: #A05A3D;
+	margin: 0px;
+	padding: 0px;
+	border: 1px solid #A05A3D;
+}
+/*------------------------------------------------Textbox on Email--------------------*/
+/*------------------------------------------------Textbox --------------------*/
+.textboxEffect {
+	background-color: #FFFFFF;
+	color: #000000;
+	margin: 0px;
+	padding: 0px;
+	border: 1px solid #91D0D9;
+	height: 18px;
+	width: 250px;
+	font-family: Verdana;
+	font-size: 11px;
+	line-height: 19px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 11px;
+	margin-left: 0px;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 10px;
+}
+
+.textboxEffect:hover {
+	background-color: #FFFFFF;
+	color: #1D859B;
+	margin: 0px;
+	padding: 0px;
+	border: 1px solid #1D859B;
+	font-family: Verdana;
+	font-size: 11px;
+	line-height: 19px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 11px;
+	margin-left: 0px;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 10px;
+}
+/*------------------------------------------------Textbox --------------------*/
+/*------------------------------------------------Textboxdropdown --------------------*/
+.dropdownEffect {
+	background-color: #FFFFFF;
+	color: #000000;
+	border: 1px solid #91D0D9;
+	height: 18px;
+	width: 260px;
+	font-family: Verdana;
+	font-size: 11px;
+	line-height: 19px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 11px;
+	margin-left: 0px;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 10px;
+}
+
+.dropdownEffect:hover {
+	background-color: #FFFFFF;
+	color: #1D859B;
+	margin: 0px;
+	padding: 0px;
+	border: 1px solid #1D859B;
+	font-family: Verdana;
+	font-size: 11px;
+	line-height: 19px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 11px;
+	margin-left: 0px;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 10px;
+}
+/*------------------------------------------------Textboxdropdown --------------------*/
+/*------------------------------------------------Massagebox --------------------*/
+.MassageboxEffect {
+	background-color: #FFFFFF;
+	color: #000000;
+	margin: 0px;
+	padding: 0px;
+	border: 1px solid #91D0D9;
+	height: 170px;
+	width: 350px;
+	font-family: Verdana;
+	font-size: 11px;
+	line-height: 19px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 11px;
+	margin-left: 0px;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 10px;
+}
+
+.MassageboxEffect:hover {
+	background-color: #FFFFFF;
+	color: #1D859B;
+	margin: 0px;
+	padding: 0px;
+	border: 1px solid #1D859B;
+	font-family: Verdana;
+	font-size: 11px;
+	line-height: 19px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 11px;
+	margin-left: 0px;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 10px;
+}
+/*------------------------------------------------Massagebox --------------------*/
