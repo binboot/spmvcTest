@@ -29,13 +29,26 @@
 		up static resources in the ${webappRoot}/resources directory -->
 	<mvc:resources mapping="/resources/**" location="/resources/" />
 
+
+	<!-- Resolves views selected for rendering by @Controllers to .html resources 
+		in the /WEB-INF/views/html5/ directory -->
+	<bean id="htmlViewResolver"
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="order" value="1"></property>
+		<property name="prefix" value="/WEB-INF/views/html5/" />
+		<property name="suffix" value=".html" />
+	</bean>
+
 	<!-- Resolves views selected for rendering by @Controllers to .jsp resources 
-		in the /WEB-INF/views directory -->
+		in the /WEB-INF/views/jsp/ directory -->
 	<bean id="jspViewResolver"
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="order" value="2"></property>
 		<property name="prefix" value="/WEB-INF/views/jsp/" />
 		<property name="suffix" value=".jsp" />
 	</bean>
+
+
 
 	<!-- This bean sets up the Velocity environment for us based on a root path 
 		for templates. Optionally, a properties file can be specified for more control 
@@ -50,7 +63,7 @@
 		resource bundle resolver. -->
 	<bean id="vmViewResolver"
 		class="org.springframework.web.servlet.view.velocity.VelocityViewResolver">
-		<property name="order" value="1"></property>
+		<property name="order" value="3"></property>
 		<property name="cache" value="true" />
 		<property name="prefix" value="" />
 		<property name="suffix" value=".vm" />

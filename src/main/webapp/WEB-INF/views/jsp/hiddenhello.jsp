@@ -4,7 +4,8 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+<title>hello</title>
 </head>
 <body>
 <h1><em>Hello,</em>${userName}</h1>

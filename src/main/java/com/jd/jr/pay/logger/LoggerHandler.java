@@ -49,7 +49,7 @@ public class LoggerHandler {
 		Object thisTarget = pjp.getThis();
 		Class thisClass = pjp.getClass();
 		// start stopwatch
-		logger.info("before @Aspect LoggerHandler calculagraph");
+		logger.info("before @Aspect LoggerHandler calculagraph: targetClass"+target.getClass()+" argsLength:"+args.length+" args:"+args[0]+" class:"+thisClass+" thisTarget:"+thisTarget);
 		Object retVal = pjp.proceed();
 		// stop stopwatch
 		logger.info("after @Aspect LoggerHandler calculagraph");

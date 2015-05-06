@@ -29,6 +29,11 @@
 		<servlet-name>spmvcTest</servlet-name>
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
+	<!-- 启用spring mvc显示html  原理see:http://stackoverflow.com/questions/13616821/make-html-default-view-spring-mvc-->
+	<servlet-mapping>
+		<servlet-name>jsp</servlet-name>
+		<url-pattern>*.html</url-pattern>
+	</servlet-mapping>
 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
@@ -62,9 +67,7 @@
 	</filter>
 	<filter-mapping>
 		<filter-name>encodingFilter</filter-name>
-		<!-- /为rest风格的匹配，所有的post，get，delete等请求都匹配的到，包括.jsp,.html
-			  /*不应使用，否则会出现多次匹配
-		 -->
+		<!-- /为rest风格的匹配，所有的post，get，delete等请求都匹配的到，包括.jsp,.html /*不应使用，否则会出现多次匹配 -->
 		<url-pattern>/</url-pattern>
 	</filter-mapping>
 </web-app>
