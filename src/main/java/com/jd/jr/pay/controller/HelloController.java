@@ -17,11 +17,14 @@ package com.jd.jr.pay.controller;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.servlet.ServletRequest;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
+import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -42,6 +45,10 @@ import com.jd.jr.pay.business.Igreeting;
 public class HelloController {
 	private static final Logger logger=LoggerFactory.getLogger(HelloController.class);
 	
+	//获取request对象
+	@Autowired
+	private ServletRequest request;
+	
 	@Autowired
 	private Igreeting ig=null;
 	@RequestMapping("/greeting.action")
@@ -49,6 +56,7 @@ public class HelloController {
 			@RequestParam(value="name",defaultValue="anonymous")
 			String name)
 	{
+		System.out.println(request.getLocalAddr());
 		Map<String,Object> map=ig.sayHello(name);
 		//这里的hello表示跳转到/WEB-INF/views/下的hello.jsp页面
 		return new ModelAndView("hello",map);
