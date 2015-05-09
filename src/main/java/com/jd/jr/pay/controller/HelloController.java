@@ -58,7 +58,7 @@ public class HelloController {
 	{
 		System.out.println(request.getLocalAddr());
 		Map<String,Object> map=ig.sayHello(name);
-		//这里的hello表示跳转到/WEB-INF/views/下的hello.jsp页面
+		//这里的hello表示跳转到/WEB-INF/views/下的hello.jsp或hello.html或hello.vm页面
 		return new ModelAndView("hello",map);
 	}
 }

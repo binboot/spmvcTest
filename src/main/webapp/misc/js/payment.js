@@ -1,15 +1,11 @@
  var globalVar={
-		 name:"zhuxin"
  }
 
 
 $(document).ready(function(){
-	
-	chenshuiyonghuFun(false,"","");
-	if(!globalVar.et)
-		{
-		alert("OK!");
-		}
+	//先将string类型转换成Boolean类型
+	var is30DayConsumerVar=new Boolean($("#is30DayConsumer").val());
+	chenshuiyonghuFun(is30DayConsumerVar,"","");
 });
 
 

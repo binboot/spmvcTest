@@ -87,7 +87,8 @@ public class GreetingImpl implements Igreeting {
 				+ result.getBody()+ "");
 		QueryPinResult qpr = (QueryPinResult) GsonUtils.fromJson(
 				result.getBody(), new TypeToken<QueryPinResult>() {}.getType());
-		map.put("userName", name);
+		map.put("pin", qpr.getPin());
+		map.put("is30DayConsumer", qpr.isIs30DayConsumer());
 		return map;
 	}
 
