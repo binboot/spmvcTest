@@ -12,41 +12,41 @@
  *COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
  *ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-package com.jd.jr.pay;
-
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Scope;
-import org.springframework.web.client.RestTemplate;
-
-import com.jd.jr.pay.business.Igreeting;
-import com.jd.jr.pay.business.impl.GreetingImpl;
-import com.jd.jr.pay.logger.LoggerHandler;
+package com.jd.jr.pay.pojo;
 
 /**
- * @Description annotaion配置类
+ * @Description 通过rest以json格式查询白条沉睡用户request类
  *
  * 
  * @author jiangyoude@jd.com
  * @see
  * @since JDK1.6
  */
-@Configuration
-public class AppConfig {
+public class QueryPin {
 
-	@Bean(name = "ig")
-	@Scope(value = "prototype")
-	public Igreeting ig() {
-		return new GreetingImpl();
+	// 需要查询是否为白条沉睡用户的pin
+	public String pin = null;
+
+	/**
+	 * @return the pin
+	 */
+	public String getPin() {
+		return pin;
 	}
 
-	@Bean(name = "loggerHandler")
-	public LoggerHandler lh() {
-		return new LoggerHandler();
+	/**
+	 * @param pin
+	 *            the pin to set
+	 */
+	public void setPin(String pin) {
+		this.pin = pin;
 	}
-	
-	@Bean(name = "restTemplate")
-	public RestTemplate rt() {
-		return new RestTemplate();
+
+	/**
+	 * @param pin
+	 */
+	public QueryPin(String pin) {
+		this.pin = pin;
 	}
+
 }

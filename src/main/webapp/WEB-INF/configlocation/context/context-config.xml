@@ -19,6 +19,11 @@
 		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.1.xsd
 		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.1.xsd
 		http://www.springframework.org/schema/websocket http://www.springframework.org/schema/websocket/spring-websocket-4.1.xsd">
+		
+
+<!-- 
+		<bean id="restTemplate" name="restTemplate" class="org.springframework.web.client.RestTemplate"></bean>
+-->
 
 	<!--LoggerHandler配置 <bean name="loggerHandler" class="com.jd.jr.pay.logger.LoggerHandler"></bean> 
 		<aop:config> <aop:aspect id="loggerAspect" ref="loggerHandler"> <aop:pointcut 

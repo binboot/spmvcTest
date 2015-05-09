@@ -1,0 +1,12 @@
+@CHARSET "UTF-8";
+
+.shengshuiUserTipsSpan {
+	font-weight: 900;
+	color: #FF5D5B;
+	font-size: 18px;
+	font-family: Microsoft Yahei
+}
+
+.importNum{
+	font-size:24px
+}

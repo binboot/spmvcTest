@@ -19,12 +19,19 @@ import java.util.Map;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Scope;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.client.RestTemplate;
 
+import com.google.gson.reflect.TypeToken;
 import com.jd.jr.pay.business.Igreeting;
-import com.jd.jr.pay.logger.LoggerHandler;
+import com.jd.jr.pay.pojo.QueryPin;
+import com.jd.jr.pay.pojo.QueryPinResult;
+import com.jd.payment.paycommon.utils.GsonUtils;
 
 /**
  * @Description TODO
@@ -36,8 +43,12 @@ import com.jd.jr.pay.logger.LoggerHandler;
  */
 public class GreetingImpl implements Igreeting {
 
-	private static final Logger logger = LoggerFactory
+	private static final Logger log = LoggerFactory
 			.getLogger(GreetingImpl.class);
+	
+
+	@Autowired
+    private RestTemplate restTemplate;
 
 	/*
 	 * (non-Javadoc)
@@ -46,8 +57,36 @@ public class GreetingImpl implements Igreeting {
 	 */
 	@Override
 	public Map<String, Object> sayHello(String name) {
+		
+		
+		String pin=name;
+		
 		Map<String, Object> map = new HashMap<String, Object>();
-		logger.info("sayHello");
+		
+		// 生成查询的json
+		QueryPin qp = new QueryPin(pin);
+		String requestJson = GsonUtils.toJson(qp);
+		// 白条沉睡用户地址
+		final String uri = "http://front.baitiao.jd.local/service/loan/queryBtFor30Day";
+		log.info("向地址" + uri + "查询用户30天内是否使用过白条,请求参数为:"
+				+ GsonUtils.toJson(qp) + "");
+
+		// 设置请求头中Content-Type为application/json
+		HttpHeaders headers = new HttpHeaders();
+		headers.setContentType(MediaType.APPLICATION_JSON);
+		//设置请求头中Connection为close，用于启用无状态短链接，保护白条服务端socket资源支持更多的客户端链接
+		headers.set("Connection", "close");
+		// 设置请求实体
+		HttpEntity<String> entity = new HttpEntity<String>(requestJson,
+				headers);
+		// 发送请求
+		ResponseEntity<String> result = restTemplate.exchange(uri,
+				HttpMethod.POST, entity, String.class);
+		
+		log.info("向地址" + uri + "查询用户30天内是否使用过白条,反馈参数为:"
+				+ result.getBody()+ "");
+		QueryPinResult qpr = (QueryPinResult) GsonUtils.fromJson(
+				result.getBody(), new TypeToken<QueryPinResult>() {}.getType());
 		map.put("userName", name);
 		return map;
 	}
