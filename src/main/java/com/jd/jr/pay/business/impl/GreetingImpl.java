@@ -27,11 +27,11 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
 
+import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.jd.jr.pay.business.Igreeting;
 import com.jd.jr.pay.pojo.QueryPin;
 import com.jd.jr.pay.pojo.QueryPinResult;
-import com.jd.payment.paycommon.utils.GsonUtils;
 
 /**
  * @Description TODO
@@ -63,13 +63,14 @@ public class GreetingImpl implements Igreeting {
 		
 		Map<String, Object> map = new HashMap<String, Object>();
 		
+		Gson gson=new Gson();
 		// 生成查询的json
 		QueryPin qp = new QueryPin(pin);
-		String requestJson = GsonUtils.toJson(qp);
+		String requestJson = gson.toJson(qp);
 		// 白条沉睡用户地址
 		final String uri = "http://front.baitiao.jd.local/service/loan/queryBtFor30Day";
 		log.info("向地址" + uri + "查询用户30天内是否使用过白条,请求参数为:"
-				+ GsonUtils.toJson(qp) + "");
+				+ requestJson + "");
 
 		// 设置请求头中Content-Type为application/json
 		HttpHeaders headers = new HttpHeaders();
@@ -85,7 +86,7 @@ public class GreetingImpl implements Igreeting {
 		
 		log.info("向地址" + uri + "查询用户30天内是否使用过白条,反馈参数为:"
 				+ result.getBody()+ "");
-		QueryPinResult qpr = (QueryPinResult) GsonUtils.fromJson(
+		QueryPinResult qpr = (QueryPinResult) gson.fromJson(
 				result.getBody(), new TypeToken<QueryPinResult>() {}.getType());
 		map.put("pin", qpr.getPin());
 		map.put("is30DayConsumer", qpr.isIs30DayConsumer());
