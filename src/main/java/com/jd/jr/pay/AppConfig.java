@@ -17,6 +17,7 @@ package com.jd.jr.pay;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Scope;
+import org.springframework.http.client.Netty4ClientHttpRequestFactory;
 import org.springframework.web.client.RestTemplate;
 
 import com.jd.jr.pay.business.Igreeting;
@@ -45,8 +46,10 @@ public class AppConfig {
 		return new LoggerHandler();
 	}
 	
+	
+	//ClientHttpRequestFactory 采用Netty4ClientHttpRequestFactory
 	@Bean(name = "restTemplate")
 	public RestTemplate rt() {
-		return new RestTemplate();
+		return new RestTemplate(new Netty4ClientHttpRequestFactory());
 	}
 }
