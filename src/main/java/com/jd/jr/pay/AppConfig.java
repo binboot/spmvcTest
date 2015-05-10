@@ -17,6 +17,8 @@ package com.jd.jr.pay;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Scope;
+import org.springframework.http.client.ClientHttpRequestFactory;
+import org.springframework.http.client.HttpComponentsClientHttpRequestFactory;
 import org.springframework.http.client.Netty4ClientHttpRequestFactory;
 import org.springframework.web.client.RestTemplate;
 
@@ -46,10 +48,19 @@ public class AppConfig {
 		return new LoggerHandler();
 	}
 	
+
+	private ClientHttpRequestFactory clientHttpRequestFactory() {
+        HttpComponentsClientHttpRequestFactory factory = new HttpComponentsClientHttpRequestFactory();
+        //超时时间为3秒
+        factory.setReadTimeout(1000);
+      //超时时间为3秒
+        factory.setConnectTimeout(1000);
+        return factory;
+    }
 	
-	//ClientHttpRequestFactory 采用Netty4ClientHttpRequestFactory
+	//ClientHttpRequestFactory 采用HttpComponentsClientHttpRequestFactory,后期改为Netty4ClientHttpRequestFactory
 	@Bean(name = "restTemplate")
 	public RestTemplate rt() {
-		return new RestTemplate(new Netty4ClientHttpRequestFactory());
+		return new RestTemplate(clientHttpRequestFactory());
 	}
 }
