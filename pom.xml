@@ -16,6 +16,8 @@
 		<jettyVersion>9.0.2.v20130417</jettyVersion>
 		<jettyHttpPort>8090</jettyHttpPort>
 		<scanIntervalSeconds>10</scanIntervalSeconds>
+		<httpclient.version>4.4.1</httpclient.version>
+		<netty.version>4.0.28.Final</netty.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -147,12 +149,12 @@
 		<dependency>
 			<groupId>org.apache.httpcomponents</groupId>
 			<artifactId>httpclient</artifactId>
-			<version>4.4.1</version>
+			<version>${httpclient.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>io.netty</groupId>
 			<artifactId>netty-all</artifactId>
-			<version>4.0.28.Final</version>
+			<version>${netty.version}</version>
 		</dependency>
 	</dependencies>
 	<build>
