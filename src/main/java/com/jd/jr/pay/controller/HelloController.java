@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -48,6 +49,10 @@ public class HelloController {
 	//获取request对象
 	@Autowired
 	private ServletRequest request;
+
+	// 获取response对象
+	@Autowired
+	private ServletResponse response;
 	
 	@Autowired
 	private Igreeting ig=null;
@@ -56,9 +61,10 @@ public class HelloController {
 			@RequestParam(value="name",defaultValue="anonymous")
 			String name)
 	{
-		System.out.println(request.getLocalAddr());
+		logger.info("请求来自IP:"+request.getLocalAddr());
 		Map<String,Object> map=ig.sayHello(name);
 		//这里的hello表示跳转到/WEB-INF/views/下的hello.jsp或hello.html或hello.vm页面
 		return new ModelAndView("hello",map);
 	}
+	
 }

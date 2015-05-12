@@ -52,9 +52,9 @@ public class AppConfig {
 	private ClientHttpRequestFactory clientHttpRequestFactory() {
         HttpComponentsClientHttpRequestFactory factory = new HttpComponentsClientHttpRequestFactory();
         //超时时间为3秒
-        factory.setReadTimeout(1000);
+        factory.setReadTimeout(3000);
       //超时时间为3秒
-        factory.setConnectTimeout(1000);
+        factory.setConnectTimeout(3000);
         return factory;
     }
 	

@@ -12,9 +12,24 @@
 *COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
 *ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
-package com.jd.jr.pay.business;
+package com.jd.jr.pay.controller;
 
 import java.util.Map;
+
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
+
+import com.jd.jr.pay.business.PasswordBus;
+
+
 
 /** 
  * @Description TODO
@@ -24,7 +39,29 @@ import java.util.Map;
  * @see 
  * @since   JDK1.6
  */
-public interface Igreeting {
-	public Map<String,Object> sayHello(String name);
+@Controller
+public class PayPasswordController {
+	private static final Logger logger=LoggerFactory.getLogger(PayPasswordController.class);
+	
+	//获取request对象
+	@Autowired
+	private ServletRequest request;
 
+	// 获取response对象
+	@Autowired
+	private ServletResponse response;
+	
+	@Autowired
+	private PasswordBus pb=null;
+	
+	@RequestMapping("/isActive.action")
+	public ModelAndView isActive(
+			@RequestParam(value="pin",defaultValue="anonymous")
+			String pin)
+	{
+		logger.info("请求来自IP:"+request.getLocalAddr());
+		Map<String,Object> map=pb.isActive(pin,request.getLocalAddr());
+		return new ModelAndView("payPassword",map);
+	}
+	
 }

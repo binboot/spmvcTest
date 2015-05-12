@@ -24,7 +24,6 @@ import java.util.Map;
  * @see 
  * @since   JDK1.6
  */
-public interface Igreeting {
-	public Map<String,Object> sayHello(String name);
-
+public interface PasswordBus {
+	public Map<String, Object> isActive(String pin,String ip);
 }

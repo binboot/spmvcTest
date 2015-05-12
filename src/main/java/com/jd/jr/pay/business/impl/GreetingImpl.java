@@ -29,6 +29,8 @@ import org.springframework.web.client.RestTemplate;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+import com.jd.finance.jrpaypassword.rest.inf.JdPayPasswordResource;
+import com.jd.finance.jrpaypassword.rest.vo.PinRequest;
 import com.jd.jr.pay.business.Igreeting;
 import com.jd.jr.pay.pojo.QueryPin;
 import com.jd.jr.pay.pojo.QueryPinResult;
@@ -45,10 +47,9 @@ public class GreetingImpl implements Igreeting {
 
 	private static final Logger log = LoggerFactory
 			.getLogger(GreetingImpl.class);
-	
 
 	@Autowired
-    private RestTemplate restTemplate;
+	private RestTemplate restTemplate;
 
 	/*
 	 * (non-Javadoc)
@@ -57,40 +58,36 @@ public class GreetingImpl implements Igreeting {
 	 */
 	@Override
 	public Map<String, Object> sayHello(String name) {
-		
-		
-		String pin=name;
-		
+
+		String pin = name;
+
 		Map<String, Object> map = new HashMap<String, Object>();
-		
-		Gson gson=new Gson();
+
+		Gson gson = new Gson();
 		// 生成查询的json
 		QueryPin qp = new QueryPin(pin);
 		String requestJson = gson.toJson(qp);
 		// 白条沉睡用户地址
 		final String uri = "http://front.baitiao.jd.local/service/loan/queryBtFor30Day";
-		log.info("向地址" + uri + "查询用户30天内是否使用过白条,请求参数为:"
-				+ requestJson + "");
+		log.info("向地址" + uri + "查询用户30天内是否使用过白条,请求参数为:" + requestJson + "");
 
 		// 设置请求头中Content-Type为application/json
 		HttpHeaders headers = new HttpHeaders();
 		headers.setContentType(MediaType.APPLICATION_JSON);
-		//设置请求头中Connection为close，用于启用无状态短链接，保护白条服务端socket资源支持更多的客户端链接
+		// 设置请求头中Connection为close，用于启用无状态短链接，保护白条服务端socket资源支持更多的客户端链接
 		headers.set("Connection", "close");
 		// 设置请求实体
-		HttpEntity<String> entity = new HttpEntity<String>(requestJson,
-				headers);
+		HttpEntity<String> entity = new HttpEntity<String>(requestJson, headers);
 		// 发送请求
 		ResponseEntity<String> result = restTemplate.exchange(uri,
 				HttpMethod.POST, entity, String.class);
-		
-		log.info("向地址" + uri + "查询用户30天内是否使用过白条,反馈参数为:"
-				+ result.getBody()+ "");
-		QueryPinResult qpr = (QueryPinResult) gson.fromJson(
-				result.getBody(), new TypeToken<QueryPinResult>() {}.getType());
+
+		log.info("向地址" + uri + "查询用户30天内是否使用过白条,反馈参数为:" + result.getBody() + "");
+		QueryPinResult qpr = (QueryPinResult) gson.fromJson(result.getBody(),
+				new TypeToken<QueryPinResult>() {
+				}.getType());
 		map.put("pin", qpr.getPin());
 		map.put("is30DayConsumer", qpr.isIs30DayConsumer());
 		return map;
 	}
-
 }
