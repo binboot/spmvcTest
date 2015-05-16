@@ -29,8 +29,6 @@ import org.springframework.web.client.RestTemplate;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import com.jd.finance.jrpaypassword.rest.inf.JdPayPasswordResource;
-import com.jd.finance.jrpaypassword.rest.vo.PinRequest;
 import com.jd.jr.pay.business.Igreeting;
 import com.jd.jr.pay.pojo.QueryPin;
 import com.jd.jr.pay.pojo.QueryPinResult;
