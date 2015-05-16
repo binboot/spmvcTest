@@ -21,15 +21,6 @@
 		http://www.springframework.org/schema/websocket http://www.springframework.org/schema/websocket/spring-websocket-4.1.xsd">
 
 
-	<bean id="pb" name="pb" class="com.jd.jr.pay.business.impl.PasswordBusImpl">
-		<property name="basicUri" value="http://paypwd.pay.jd.com/service/jdPayPasswordResource/"></property>
-		<property name="caller" value="testApp"></property>
-		<property name="signature" value="testApp"></property>
-		<property name="systemNo" value="1"></property>
-		<property name="sysBizType" value="1"></property>
-		<property name="bizType" value="1"></property>
-	</bean>
-
 	<!--spring rest请求模板,默认依赖httpClient中的HttpComponentsClientHttpRequestFactory,后期改为依赖Netty4ClientHttpRequestFactory -->
 	<!-- 
 	<bean id="clientHttpRequestFactory"
