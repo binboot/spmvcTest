@@ -21,19 +21,36 @@
 		http://www.springframework.org/schema/websocket http://www.springframework.org/schema/websocket/spring-websocket-4.1.xsd">
 
 
+
+
+	<!-- 调用新版密码服务 -->
+	<bean id="pb" name="pb" class="com.jd.jr.pay.business.impl.PasswordBusImpl">
+		<property name="basicUri" value="${paypassword.basicUri}"></property>
+		<property name="caller" value="${paypassword.caller}"></property>
+		<property name="signature" value="${paypassword.signature}"></property>
+		<property name="systemNo" value="${paypassword.systemNo}"></property>
+		<property name="sysBizType" value="${paypassword.sysBizType}"></property>
+		<property name="bizType" value="${paypassword.bizType}"></property>
+		<property name="restHeaders">
+			<map>
+				<!-- 设置请求头为application/json;charset=utf-8 -->
+				<entry key="Content-Type" value="${paypassword.contentType}" />
+				<!-- 设置可接收的返回编码为utf-8 -->
+				<entry key="Accept-Charset" value="${paypassword.acceptCharset}" />
+				<!-- 设置请求头中Connection为close，用于启用无状态短链接，保护白条服务端socket资源支持更多的客户端链接 -->
+				<entry key="Connection" value="${paypassword.connection}" />
+			</map>
+		</property>
+	</bean>
+
+
+
 	<!--spring rest请求模板,默认依赖httpClient中的HttpComponentsClientHttpRequestFactory,后期改为依赖Netty4ClientHttpRequestFactory -->
-	<!-- 
-	<bean id="clientHttpRequestFactory"
-		class="org.springframework.http.client.HttpComponentsClientHttpRequestFactory">
-		<property name="readTimeout" value="1000" />
-		<property name="connectTimeout" value="1000" />
-	</bean>
-	<bean id="restTemplate" name="restTemplate"
-		class="org.springframework.web.client.RestTemplate">
-		<constructor-arg ref="clientHttpRequestFactory"></constructor-arg>
-	</bean>
-	 -->
-	
+	<!-- <bean id="clientHttpRequestFactory" class="org.springframework.http.client.HttpComponentsClientHttpRequestFactory"> 
+		<property name="readTimeout" value="1000" /> <property name="connectTimeout" 
+		value="1000" /> </bean> <bean id="restTemplate" name="restTemplate" class="org.springframework.web.client.RestTemplate"> 
+		<constructor-arg ref="clientHttpRequestFactory"></constructor-arg> </bean> -->
+
 	<!--LoggerHandler配置 <bean name="loggerHandler" class="com.jd.jr.pay.logger.LoggerHandler"></bean> 
 		<aop:config> <aop:aspect id="loggerAspect" ref="loggerHandler"> <aop:pointcut 
 		id="businessService" expression="execution(* com.jd.jr.pay.business.*.*(..))" 

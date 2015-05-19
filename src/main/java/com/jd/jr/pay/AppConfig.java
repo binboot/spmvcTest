@@ -14,11 +14,31 @@
  */
 package com.jd.jr.pay;
 
+import io.netty.bootstrap.Bootstrap;
+import io.netty.channel.ChannelConfig;
+import io.netty.channel.ChannelFuture;
+import io.netty.channel.ChannelInitializer;
+import io.netty.channel.ChannelOption;
+import io.netty.channel.ChannelPipeline;
+import io.netty.channel.EventLoopGroup;
+import io.netty.channel.epoll.EpollEventLoopGroup;
+import io.netty.channel.epoll.EpollSocketChannel;
+import io.netty.channel.epoll.EpollSocketChannelConfig;
+import io.netty.channel.nio.NioEventLoopGroup;
+import io.netty.channel.socket.SocketChannel;
+import io.netty.channel.socket.SocketChannelConfig;
+import io.netty.channel.socket.nio.NioSocketChannel;
+import io.netty.channel.Channel;
+import io.netty.handler.codec.http.HttpClientCodec;
+import io.netty.handler.codec.http.HttpObjectAggregator;
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Scope;
 import org.springframework.http.client.ClientHttpRequestFactory;
 import org.springframework.http.client.HttpComponentsClientHttpRequestFactory;
+import org.springframework.http.client.Netty4ClientHttpRequestFactory;
+import org.springframework.http.client.Netty4ClientNioHttpRequestFactory;
 import org.springframework.web.client.RestTemplate;
 
 import com.jd.jr.pay.business.Igreeting;
@@ -49,12 +69,12 @@ public class AppConfig {
 	
 
 	private ClientHttpRequestFactory clientHttpRequestFactory() {
-        HttpComponentsClientHttpRequestFactory factory = new HttpComponentsClientHttpRequestFactory();
-        //超时时间为3秒
-        factory.setReadTimeout(3000);
-      //超时时间为3秒
-        factory.setConnectTimeout(3000);
-        return factory;
+		Netty4ClientNioHttpRequestFactory clientHttpRequestFactory=new Netty4ClientNioHttpRequestFactory();
+		clientHttpRequestFactory.setConnectTimeout(50);
+		clientHttpRequestFactory.setSo_keepalive(false);
+		clientHttpRequestFactory.setSo_linger(50);
+		clientHttpRequestFactory.setSo_timeout(50);
+		return clientHttpRequestFactory;
     }
 	
 	//ClientHttpRequestFactory 采用HttpComponentsClientHttpRequestFactory,后期改为Netty4ClientHttpRequestFactory
