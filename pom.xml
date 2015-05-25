@@ -161,6 +161,13 @@
 			<artifactId>netty-transport-native-epoll</artifactId>
 			<version>${netty.version}</version>
 		</dependency>
+		
+		<!-- 新版支付密码依赖包 -->
+		<dependency>
+			<groupId>com.jd.finance</groupId>
+			<artifactId>jrpaypassword-export</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
 	</dependencies>
 	<build>
 		<plugins>
