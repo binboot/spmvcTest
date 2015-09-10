@@ -62,10 +62,30 @@
 		If you need different view resolving based on Locale, you have to use the 
 		resource bundle resolver. -->
 	<bean id="vmViewResolver"
-		class="org.springframework.web.servlet.view.velocity.VelocityViewResolver">
-		<property name="order" value="3"></property>
+		class="org.springframework.web.servlet.view.velocity.VelocityLayoutViewResolver">
+		
 		<property name="cache" value="true" />
 		<property name="prefix" value="" />
 		<property name="suffix" value=".vm" />
 	</bean>
+	
+	    <bean id= "viewResolver"  
+    class= "org.springframework.web.servlet.view.velocity.VelocityLayoutViewResolver">  
+             <property name= "cache" value= "true"/>  
+             <property name= "prefix" value= ""/>  
+             <property name= "suffix" value= ".vm"/>  
+             <property name="order" value="3"/>
+             <property name= "contentType">  
+              <value>text/html;charset=utf-8</value>  
+             </property>  
+             <property name="toolboxConfigLocation">  
+                       <value>/WEB-INF/toolbox.xml</value>  
+             </property>  
+             <property name="layoutUrl" value="layout/layout.vm" />  
+             <property name="allowSessionOverride" value="true"/>  
+             <property name="allowRequestOverride" value="true"/>  
+             <property name="exposeSessionAttributes" value="true"/>  
+             <property name="requestContextAttribute" value="rc"/>  
+             <property name="exposeRequestAttributes" value="true"/>  
+    </bean>  
 </beans>

@@ -29,11 +29,8 @@ import org.springframework.web.client.RestTemplate;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import com.jd.finance.jrpaypassword.rest.vo.CheckIsActiveResponse;
-import com.jd.finance.jrpaypassword.rest.vo.CheckResponse;
-import com.jd.finance.jrpaypassword.rest.vo.PinCheckPayPasswordRequest;
-import com.jd.finance.jrpaypassword.rest.vo.PinRequest;
 import com.jd.jr.pay.business.PasswordBus;
+import com.jd.jr.pay.logger.Calculagraph;
 import com.jd.jr.pay.pojo.QueryPinResult;
 
 /**
@@ -92,20 +89,14 @@ public class PasswordBusImpl implements PasswordBus {
 	 * @see com.jd.jr.pay.business.PasswordBus#isActive(java.lang.String)
 	 */
 	@Override
+	@Calculagraph
 	public Map<String, Object> isActive(String pin, String ip) {
 		Map<String, Object> map = new HashMap<String, Object>();
 		Gson gson = new Gson();
-		PinRequest pr = new PinRequest();
-		pr.setCaller(this.getCaller());
-		pr.setSignature(this.getSignature());
-		pr.setIp(ip);
-		pr.setSystemNo(this.getSystemNo());
-		pr.setSysBizType(this.getSysBizType());
-		pr.setBizType(this.getBizType());
-		pr.setPin(pin);
+		String reqeustBody="";
 
 		String isActiveUri = basicUri + "isActive";
-		String requestJson = gson.toJson(pr);
+		String requestJson = gson.toJson(reqeustBody);
 		log.info("向地址:" + isActiveUri + "查询用户pin:" + pin + "的支付密码是否已激活,请求参数为:"
 				+ requestJson + "");
 		// 设置请求头中Content-Type为application/json
@@ -130,14 +121,8 @@ public class PasswordBusImpl implements PasswordBus {
 		log.info("向地址:" + isActiveUri + "查询用户pin:" + pin + "的支付密码是否已激活,反馈参数为:"
 				+ result.getBody() + "");
 		
-		CheckIsActiveResponse ciar = (CheckIsActiveResponse) gson.fromJson(
-				result.getBody(), new TypeToken<CheckIsActiveResponse>() {
-				}.getType());
-
-		map.put("pin", pin);
-		map.put("result", ciar.isResult());
-		map.put("safeLevel", ciar.getSafeLevel());
-		map.put("safeLevelDesc", ciar.getSafeLevelDesc());
+		String responseBody=result.getBody();
+		map.put("pin", responseBody);
 		return map;
 	}
 

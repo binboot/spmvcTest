@@ -38,11 +38,12 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.http.client.ClientHttpRequestFactory;
 import org.springframework.http.client.HttpComponentsClientHttpRequestFactory;
 import org.springframework.http.client.Netty4ClientHttpRequestFactory;
-import org.springframework.http.client.Netty4ClientNioHttpRequestFactory;
 import org.springframework.web.client.RestTemplate;
 
 import com.jd.jr.pay.business.Igreeting;
+import com.jd.jr.pay.business.PasswordBus;
 import com.jd.jr.pay.business.impl.GreetingImpl;
+import com.jd.jr.pay.business.impl.PasswordBusImpl;
 import com.jd.jr.pay.logger.LoggerHandler;
 
 /**
@@ -69,7 +70,7 @@ public class AppConfig {
 	
 
 	private ClientHttpRequestFactory clientHttpRequestFactory() {
-		Netty4ClientNioHttpRequestFactory clientHttpRequestFactory=new Netty4ClientNioHttpRequestFactory();
+		Netty4ClientHttpRequestFactory clientHttpRequestFactory=new Netty4ClientHttpRequestFactory();
 		clientHttpRequestFactory.setConnectTimeout(50);
 		clientHttpRequestFactory.setSo_keepalive(false);
 		clientHttpRequestFactory.setSo_linger(50);

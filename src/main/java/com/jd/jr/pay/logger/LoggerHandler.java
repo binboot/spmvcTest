@@ -24,6 +24,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.context.annotation.Scope;
 
+import com.google.gson.Gson;
 import com.jd.jr.pay.business.Igreeting;
 import com.jd.jr.pay.business.impl.GreetingImpl;
 
@@ -40,16 +41,23 @@ public class LoggerHandler {
 
 	public static final Logger logger = LoggerFactory
 			.getLogger(LoggerHandler.class);
-	
-	@Around("execution(* com.jd.jr.pay.business.*.*(..))")
-	public Object calculagraph(ProceedingJoinPoint pjp) throws Throwable {
 
+	//@Around("execution(* com.jd.jr.pay.business.Igreeting.*(..)) && @annotation(Calculagraph)")
+	@Around("@annotation(Calculagraph)")
+	public Object calculagraph(ProceedingJoinPoint pjp) throws Throwable {
+		Gson gson=new Gson();
 		Object[] args = pjp.getArgs();
 		Object target = pjp.getTarget();
 		Object thisTarget = pjp.getThis();
 		Class thisClass = pjp.getClass();
 		// start stopwatch
-		logger.info("before @Aspect LoggerHandler calculagraph: targetClass"+target.getClass()+" argsLength:"+args.length+" args:"+args[0]+" class:"+thisClass+" thisTarget:"+thisTarget);
+		logger.info("before @Aspect LoggerHandler calculagraph: \n"
+				+ "targetClass:" + target.getClass() + "\n" 
+				+ "argsLength:"+ args.length + "\n" 
+				+ "class:" + thisClass + "\n"
+				+ "thisTarget:" + thisTarget + "\n"
+				+ "args:"+ gson.toJson(args) + "\n");
+
 		Object retVal = pjp.proceed();
 		// stop stopwatch
 		logger.info("after @Aspect LoggerHandler calculagraph");

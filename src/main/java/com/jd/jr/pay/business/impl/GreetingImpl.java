@@ -30,6 +30,7 @@ import org.springframework.web.client.RestTemplate;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.jd.jr.pay.business.Igreeting;
+import com.jd.jr.pay.logger.Calculagraph;
 import com.jd.jr.pay.pojo.QueryPin;
 import com.jd.jr.pay.pojo.QueryPinResult;
 
@@ -55,6 +56,7 @@ public class GreetingImpl implements Igreeting {
 	 * @see com.jd.jr.pay.business.Igreeting#sayHello(java.lang.String)
 	 */
 	@Override
+	@Calculagraph
 	public Map<String, Object> sayHello(String name) {
 
 		String pin = name;

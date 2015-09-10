@@ -32,6 +32,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.jd.jr.pay.business.Igreeting;
+import com.jd.jr.pay.business.PasswordBus;
 
 /** 
  * @Description TODO
@@ -56,15 +57,21 @@ public class HelloController {
 	
 	@Autowired
 	private Igreeting ig=null;
+	
+	@Autowired
+	private PasswordBus pb=null;
+	
 	@RequestMapping("/greeting.action")
 	public ModelAndView greeting(
 			@RequestParam(value="name",defaultValue="anonymous")
 			String name)
 	{
-		logger.info("请求来自IP:"+request.getLocalAddr());
-		Map<String,Object> map=ig.sayHello(name);
+		logger.info("请求来自IP:"+request.getLocalAddr()+",pin:"+name);
+		//Map<String,Object> map=ig.sayHello(name);
 		//这里的hello表示跳转到/WEB-INF/views/下的hello.jsp或hello.html或hello.vm页面
+		Map<String,Object> map=new HashMap<String, Object>();
+		map.put("pin",name);
 		return new ModelAndView("hello",map);
+		
 	}
-	
 }
