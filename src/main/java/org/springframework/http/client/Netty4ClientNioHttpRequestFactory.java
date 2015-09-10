@@ -253,9 +253,10 @@ public class Netty4ClientNioHttpRequestFactory implements
 
 	private Netty4ClientHttpRequest createRequestInternal(URI uri,
 			HttpMethod httpMethod) {
-		return new Netty4ClientHttpRequest(getBootstrap(), uri, httpMethod,
-				this.maxRequestSize);
+		return new Netty4ClientHttpRequest(getBootstrap(), uri, httpMethod);
 	}
+	
+
 
 	@Override
 	public void destroy() throws InterruptedException {
